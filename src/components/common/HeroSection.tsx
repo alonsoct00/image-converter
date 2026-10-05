@@ -56,7 +56,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-medium border border-slate-300/80 shadow-xs hover:border-slate-400 transition-all focus:outline-none focus:ring-2 focus:ring-slate-300"
           >
             <Sparkles className="w-5 h-5 text-indigo-600" />
-            <span>Eliminar fondo con IA</span>
+            <span>AI Image Enhancement</span>
           </button>
         </div>
 

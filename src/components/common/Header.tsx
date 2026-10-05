@@ -2,8 +2,8 @@ import React from 'react';
 import { Layers, ShieldCheck, Zap } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'converter' | 'background-remover';
-  onSelectTab: (tab: 'converter' | 'background-remover') => void;
+  activeTab: 'converter' | 'ai-enhance';
+  onSelectTab: (tab: 'converter' | 'ai-enhance') => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab }) => {
@@ -22,11 +22,11 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab }) => {
                 PRO
               </span>
             </div>
-            <p className="text-xs text-slate-500 hidden sm:block">Conversión local y eliminación de fondo IA</p>
+            <p className="text-xs text-slate-500 hidden sm:block">Conversión local y mejora con IA</p>
           </div>
         </div>
 
-        {/* Navigation Tabs */}
+        {/* Navigation Tabs (Section 1: Convert / AI Enhance) */}
         <nav className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200/80">
           <button
             type="button"
@@ -38,13 +38,13 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab }) => {
             }`}
           >
             <Zap className="w-4 h-4 text-blue-600" />
-            <span>Convertir imagen</span>
+            <span>Convert</span>
           </button>
           <button
             type="button"
-            onClick={() => onSelectTab('background-remover')}
+            onClick={() => onSelectTab('ai-enhance')}
             className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all ${
-              activeTab === 'background-remover'
+              activeTab === 'ai-enhance'
                 ? 'bg-white text-slate-900 shadow-sm'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
             }`}
@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
-            <span>Eliminar fondo con IA</span>
+            <span>AI Enhance</span>
           </button>
         </nav>
 

@@ -9,6 +9,7 @@ import {
 } from '../file/format';
 import { validateFileSize, SUPPORTED_EXTENSIONS } from '../file/security';
 import { getAvailableOutputFormats, getFormatCapability } from '../../services/image/formats';
+import { selectBestProvider, getAIProvider } from '../../services/ai/provider-selector';
 
 /**
  * Self-running test runner for conversion, security and format utilities
@@ -121,6 +122,28 @@ export function runUnitTests(): { passed: number; failed: number; results: strin
 
   const pngCap = getFormatCapability('png');
   assert('PNG soporta alpha', pngCap.supportsAlpha === true);
+
+  // 6. Tests de AI Provider Selector y Strategy Pattern
+  assert(
+    'Auto provider selecciona Nano Banana para remove-background',
+    selectBestProvider('remove-background').id === 'nano-banana'
+  );
+  assert(
+    'Auto provider selecciona ChatGPT para restore',
+    selectBestProvider('restore').id === 'chatgpt'
+  );
+  assert(
+    'Auto provider selecciona Local para optimize-web',
+    selectBestProvider('optimize-web').id === 'local'
+  );
+  assert(
+    'getAIProvider respeta selección explícita chatgpt',
+    getAIProvider('chatgpt', 'enhance').id === 'chatgpt'
+  );
+  assert(
+    'getAIProvider respeta selección explícita nano-banana',
+    getAIProvider('nano-banana', 'lighting').id === 'nano-banana'
+  );
 
   return { passed, failed, results };
 }

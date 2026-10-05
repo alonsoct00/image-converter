@@ -33,6 +33,22 @@ Una aplicación web moderna, rápida y profesional tipo SaaS para convertir imá
   - Soporte para Gemini Flash Image (`gemini-2.5-flash-image` / `gemini-3.1-flash-image`)
   - Editor posterior: cambiar fondo a transparente (damero), blanco, negro, color personalizado o imagen de fondo personalizada; ajustes de escala y margen (padding).
 
+- **AI Image Enhancement & AI Tools**:
+  - Pestaña unificada **AI Enhance** con selector de motor IA: `Auto`, `Nano Banana` y `ChatGPT`.
+  - Operaciones disponibles:
+    - **Enhance**: Mejora general de calidad y resolución.
+    - **Sharpen**: Aumento de nitidez y microcontraste.
+    - **Denoise**: Reducción de ruido y grano digital.
+    - **Upscale**: Super-resolución a 2x o 4x.
+    - **Lighting**: Mejora de exposición y rango dinámico.
+    - **Color**: Calibración de color y balance.
+    - **Restore**: Restauración de fotografías antiguas o dañadas.
+    - **Optimize for Web**: Optimización determinista de alta compresión sin llamadas innecesarias a IA ni consumo de saldo.
+    - **Custom AI Edit**: Instrucciones en lenguaje natural personalizadas.
+    - **Remove Background**: Eliminación de fondo con recorte alpha y opciones de edición posterior.
+  - **Comparador interactivo Antes / Después**: Divisor sincronizado con soporte táctil y móvil.
+  - **Conciencia de costos (Cost-awareness)**: Las llamadas a los proveedores ocurren estrictamente al hacer clic en "Enhance image", sin llamadas automáticas en segundo plano al cambiar controles.
+
 ## Variables de Entorno
 
 Configura tu archivo `.env` tomando como referencia `.env.example`:
@@ -41,7 +57,11 @@ Configura tu archivo `.env` tomando como referencia `.env.example`:
 # Clave opcional para la API oficial de Nano Banana
 NANO_BANANA_API_KEY="tu_clave_nano_banana"
 
-# Clave de Gemini para modelo multimodal de recorte
+# Clave opcional para OpenAI ChatGPT Image Edit
+OPENAI_API_KEY="tu_clave_openai"
+OPENAI_IMAGE_MODEL="gpt-image-2.5-flare"
+
+# Clave de Gemini para modelo multimodal de recorte y edición
 GEMINI_API_KEY="tu_clave_gemini"
 
 # Modelo de IA seleccionado (opcional, por defecto gemini-2.5-flash-image)
