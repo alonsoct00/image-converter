@@ -1,0 +1,6 @@
+{
+  "name": "Image Converter",
+  "description": "Convierte imágenes entre múltiples formatos y elimina fondos con IA. Rápido, sencillo y privado.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
