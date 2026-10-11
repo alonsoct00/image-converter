@@ -1,6 +1,6 @@
 {
   "name": "Image Converter",
-  "description": "Convierte imágenes entre múltiples formatos y elimina fondos con IA. Rápido, sencillo y privado.",
+  "description": "Convierte imágenes gratis entre JPG, PNG, WebP, AVIF, TIFF y HEIC en tu navegador. Elimina fondos y mejora fotos con IA de forma rápida, privada y sin límites.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

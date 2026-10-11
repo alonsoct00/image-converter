@@ -41,6 +41,28 @@ app.get('/api/health', (_req: Request, res: Response) => {
 });
 
 /**
+ * SEO endpoints: robots.txt and sitemap.xml
+ */
+app.get('/robots.txt', (_req: Request, res: Response) => {
+  const appUrl = process.env.APP_URL || 'https://ais-pre-2nodnspbhfvlpc2tdzftiz-712590602306.us-west2.run.app';
+  res.type('text/plain').send(`User-agent: *\nAllow: /\n\nSitemap: ${appUrl}/sitemap.xml\n`);
+});
+
+app.get('/sitemap.xml', (_req: Request, res: Response) => {
+  const appUrl = process.env.APP_URL || 'https://ais-pre-2nodnspbhfvlpc2tdzftiz-712590602306.us-west2.run.app';
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${appUrl}/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>`;
+  res.type('application/xml').send(xml);
+});
+
+/**
  * Handle background removal logic
  */
 async function handleBackgroundRemoval(req: Request, res: Response): Promise<void> {

@@ -27,9 +27,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-none">
-          Convierte tus imágenes <br className="hidden sm:inline" />
+          Image Converter <br className="hidden sm:inline" />
           <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-            en segundos
+            Convierte tus imágenes en segundos
           </span>
         </h1>
 
